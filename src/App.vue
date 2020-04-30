@@ -36,4 +36,8 @@ html {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
+
+body {
+  background-color: darkgrey;
+}
 </style>

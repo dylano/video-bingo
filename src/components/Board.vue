@@ -105,10 +105,6 @@ export default {
 </script>
 
 <style scoped>
-.game-board {
-  background-color: darkgrey;
-}
-
 .game-squares {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
