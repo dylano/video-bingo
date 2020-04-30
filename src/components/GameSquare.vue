@@ -1,5 +1,7 @@
 <template>
-  <div class="game-square" :style="styleObj" @click="toggleState">{{ text }}</div>
+  <div class="game-square" :style="styleObj" @click="toggleState">
+    {{ text }}
+  </div>
 </template>
 
 <script>
@@ -18,11 +20,13 @@ export default {
   },
   computed: {
     styleObj() {
-      const backgroundColor = this.checked ? 'blue' : 'white';
+      const backgroundColor = this.checked ? 'var(--zoom-color)' : 'white';
       const color = this.checked ? 'white' : 'black';
+      const border = this.checked ? '3px solid yellow' : '3px solid white';
       return {
         backgroundColor,
-        color
+        color,
+        border
       };
     }
   }
@@ -36,10 +40,8 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0 0.5rem;
-  padding: 0.5rem;
-  border-radius: 10px;
-  height: 5rem;
+  border-radius: 1rem;
+  height: 6rem;
   transition: all 200ms ease-in-out;
   overflow: hidden;
 }
