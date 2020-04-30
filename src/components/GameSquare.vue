@@ -1,7 +1,5 @@
 <template>
-  <div class="game-square" :style="styleObj" @click="squareClicked">
-    {{ text }}
-  </div>
+  <div class="game-square" :style="styleObj" @click="squareClicked" v-html="text" />
 </template>
 
 <script>

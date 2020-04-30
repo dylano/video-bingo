@@ -4,9 +4,9 @@ export const phrases = [
   `____, are you there?`,
   `Uh, ____, you're still sharing.`,
   `Hey guys, I have to jump to another call.`,
-  `(Sound of someone typing, possibly with a hammer)`,
-  `(Loud, painful echo/feedback)`,
-  `(Child or animal noises)`,
+  `<em>(Sound of someone typing, possibly with a hammer)</em>`,
+  `<em>(Loud, painful echo/feedback)</em>`,
+  `<em>(Child or animal noises)</em>`,
   `Hi, can you hear me?`,
   `No, it's still loading.`,
   `Next slide, please.`,
@@ -14,7 +14,7 @@ export const phrases = [
   `I'm sorry, I was on mute.`,
   `Sorry, go ahead.`,
   `Hello? Hello?`,
-  `Sorry I'm late. (Insert lame excuse)`,
+  `<span>Sorry I'm late. <em>(Insert lame excuse)</em></span>`,
   `I have a hard stop at...`,
   `I'm sorry, you cut out there.`,
   `Can we take this offline?`,
@@ -23,5 +23,5 @@ export const phrases = [
   `Sorry, I was having connection issues.`,
   `I think there's a lag.`,
   `Sorry, didn't catch that. Can you repeat?`,
-  `So <faded out> I can <inaudible> by <garbled>, OK?`
+  `<span>So <em>(faded out)</em> I can <em>(inaudible)</em> by <em>(garbled)</em>, OK?</span>`
 ];
