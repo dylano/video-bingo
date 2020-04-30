@@ -9,7 +9,7 @@ Deployment: https://zoom-bingo.netlify.app/
 Simple randomized bingo card filled with phrases you'll hear during your next unproductive Zoom call.
 
 <div>
-<img src="video-bingo.png" alt="Screenshot" width=250/>
+<img src="video-bingo.png" alt="Screenshot" width=500/>
 </div>
 
 ## Project setup
