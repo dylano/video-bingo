@@ -19,6 +19,14 @@ export default {
 </script>
 
 <style>
+:root {
+  --zoom-color: #0c63ce;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   margin: 0;
