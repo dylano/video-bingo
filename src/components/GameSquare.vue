@@ -36,9 +36,11 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 0.5rem;
+  margin: 0 0.5rem;
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   height: 5rem;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
 }
 </style>
