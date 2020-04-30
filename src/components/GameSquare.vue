@@ -1,33 +1,32 @@
 <template>
-  <div class="game-square" :style="styleObj" @click="toggleState">
+  <div class="game-square" :style="styleObj" @click="squareClicked">
     {{ text }}
   </div>
 </template>
 
 <script>
+const statusStyle = {
+  0: { color: 'black', backgroundColor: 'white', border: '3px solid white' },
+  1: { color: 'white', backgroundColor: 'var(--zoom-color)', border: '3px solid white' },
+  2: { color: 'yellow', backgroundColor: 'var(--zoom-color)', border: '3px solid yellow' }
+};
+
 export default {
   props: {
     text: {
       type: String
     },
-    checked: { type: Boolean },
+    status: { type: Number },
     id: { type: Number }
   },
   methods: {
-    toggleState() {
+    squareClicked() {
       this.$emit('toggle-state', this.id);
     }
   },
   computed: {
     styleObj() {
-      const backgroundColor = this.checked ? 'var(--zoom-color)' : 'white';
-      const color = this.checked ? 'white' : 'black';
-      const border = this.checked ? '3px solid yellow' : '3px solid white';
-      return {
-        backgroundColor,
-        color,
-        border
-      };
+      return statusStyle[this.status];
     }
   }
 };

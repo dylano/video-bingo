@@ -54,7 +54,7 @@ export default {
   },
   data() {
     return {
-      squareStatus: new Array(25).fill(false)
+      squareStatus: new Array(25).fill(0)
     };
   },
   computed: {
@@ -68,26 +68,38 @@ export default {
   },
   methods: {
     toggleState(idx) {
-      const newState = !this.squareStatus[idx];
+      const newState = this.squareStatus[idx] ? 0 : 1;
       this.$set(this.squareStatus, idx, newState);
-      this.checkForBingo(idx);
+      this.checkForBingo();
     },
-    checkForBingo(index) {
-      const possibleBingos = bingos.filter(b => b.includes(index));
-      possibleBingos.forEach(set => {
+    checkForBingo() {
+      // Figure out which squares are part of a Bingo
+      const winningSquares = new Set();
+      bingos.forEach(set => {
         let bingo = true;
         let setIdx = 0;
         while (bingo & (setIdx < set.length)) {
-          bingo = bingo && this.squareStatus[set[setIdx++]];
+          bingo = bingo && this.squareStatus[set[setIdx++]] > 0;
         }
         if (bingo) {
-          console.log(`Bingo on ${set}`);
+          set.forEach(el => winningSquares.add(el));
         }
       });
+
+      // Set the status for each square
+      for (let i = 0; i < this.squareStatus.length; i++) {
+        if (winningSquares.has(i)) {
+          this.$set(this.squareStatus, i, 2);
+        } else if (this.squareStatus[i] === 2) {
+          // This is no longer a bingo square
+          this.$set(this.squareStatus, i, 1);
+        }
+      }
     }
   },
   mounted() {
-    this.$set(this.squareStatus, FREE_SPACE_INDEX, true);
+    // pre-select the free space square
+    this.$set(this.squareStatus, FREE_SPACE_INDEX, 1);
   }
 };
 </script>
